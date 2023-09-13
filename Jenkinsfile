@@ -17,17 +17,6 @@ pipeline {
               sh "${scannerHome}/bin/sonar-scanner"
             }   
 
-        }
-
-    }
-
-
-    stage('SonarQube Quality Gate') {
-      environment {
-        scannerHome = tool 'sonarqube'
-      }
-        steps {
-
             timeout(time: 10, unit: 'MINUTES'){
             waitForQualityGate abortPipeline: true
            }
@@ -35,6 +24,9 @@ pipeline {
         }
 
     }
+
+
+
 
 
 
