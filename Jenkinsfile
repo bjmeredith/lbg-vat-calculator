@@ -8,7 +8,7 @@ pipeline {
           git branch: 'main', url: 'https://github.com/bjmeredith/lbg-vat-calculator.git'
         }
     }
-    stage('SonarQube Analysis') {
+    stage('SonarQube Analysis ') {
       environment {
         scannerHome = tool 'sonarqube'
       }
